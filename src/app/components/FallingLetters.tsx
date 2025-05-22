@@ -97,6 +97,7 @@ const FallingLetters = () => {
         mousePos = getRelativeMousePosition(e, canvas);
       };
       
+    console.log(prevMousePos);
     window.addEventListener('mousemove', updateMousePosition);
 
     Events.on(engine, 'beforeUpdate', () => {
