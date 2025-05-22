@@ -1,0 +1,14 @@
+<svg width="171" height="171" viewBox="0 0 171 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="63" y="18" width="45" height="45" stroke="black" stroke-width="6"/>
+<path d="M78 30V63" stroke="black" stroke-width="6"/>
+<path d="M93 30V63" stroke="black" stroke-width="6"/>
+<rect x="18" y="63" width="45" height="45" stroke="black" stroke-width="6"/>
+<path d="M33 75V108" stroke="black" stroke-width="6"/>
+<path d="M48 75V108" stroke="black" stroke-width="6"/>
+<rect x="108" y="63" width="45" height="45" stroke="black" stroke-width="6"/>
+<path d="M123 75V108" stroke="black" stroke-width="6"/>
+<path d="M138 75V108" stroke="black" stroke-width="6"/>
+<rect x="63" y="108" width="45" height="45" stroke="black" stroke-width="6"/>
+<path d="M78 120V153" stroke="black" stroke-width="6"/>
+<path d="M93 120V153" stroke="black" stroke-width="6"/>
+</svg>
