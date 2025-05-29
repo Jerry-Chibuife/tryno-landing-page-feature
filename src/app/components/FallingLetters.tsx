@@ -100,22 +100,42 @@ const FallingLetters = () => {
     console.log(prevMousePos);
     window.addEventListener('mousemove', updateMousePosition);
 
+    // Events.on(engine, 'beforeUpdate', () => {
+    //     for (const body of bodies) {
+    //       const dx = body.position.x - mousePos.x;
+    //       const dy = body.position.y - mousePos.y;
+    //       const dist = Math.sqrt(dx * dx + dy * dy);
+      
+    //       const radius = 150; // Repulsion radius
+    //       if (dist < radius && dist > 1) {
+    //         const forceMagnitude = 0.01 * (1 - dist / radius); // Stronger when closer
+    //         const fx = (dx / dist) * forceMagnitude;
+    //         const fy = (dy / dist) * forceMagnitude;
+      
+    //         Matter.Body.applyForce(body, body.position, { x: fx, y: fy });
+    //       }
+    //     }
+    //   });
+
     Events.on(engine, 'beforeUpdate', () => {
-        for (const body of bodies) {
-          const dx = body.position.x - mousePos.x;
-          const dy = body.position.y - mousePos.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-      
-          const radius = 150; // Repulsion radius
-          if (dist < radius && dist > 1) {
-            const forceMagnitude = 0.01 * (1 - dist / radius); // Stronger when closer
-            const fx = (dx / dist) * forceMagnitude;
-            const fy = (dy / dist) * forceMagnitude;
-      
-            Matter.Body.applyForce(body, body.position, { x: fx, y: fy });
-          }
+      bodies.forEach((body) => {
+        const isOffTop = body.position.y < -200;
+        const isOffBottom = body.position.y > height + 200;
+    
+        if (isOffTop || isOffBottom) {
+          // Reset position to top
+          Matter.Body.setPosition(body, {
+            x: Math.random() * width,
+            y: -100 - Math.random() * 200,
+          });
+    
+          // Reset velocity
+          Matter.Body.setVelocity(body, { x: 0, y: 0 });
+          Matter.Body.setAngularVelocity(body, 0);
         }
       });
+    });
+    
       
       
 
